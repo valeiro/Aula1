@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+main()
+{
+
+    float valorMetro,valorCentimetros,resultado1,resultado2;
+
+    printf("INFORME QUANTOS METROS VOCE DESEJA CALCULAR: ");
+
+    scanf("%f",&valorMetro);
+
+    resultado1 = (valorMetro * 100);
+
+    resultado2 = (valorMetro * 1000);
+
+    printf("VALOR DO METRO: %0.3f \n", resultado1);
+
+    printf("VALOR DO MILIMETRO: %0.3f \n", resultado2);
+
+}
