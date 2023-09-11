@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    double Valor1, Valor2, resultado;
+    char operador;
+
+    printf("DIGITE O PRIMEIRPO NUMERO: ");
+    scanf("%lf", &Valor1);
+    printf("DIGITE O SEGUNDO NUMERO: ");
+    scanf("%lf", &Valor2);
+    printf("DIGITE O OPERADOR (+, -, *, /) : ");
+    scanf("%c", &operador);
+
+    switch(operador)
+
+    {
+            case '+':
+            resultado = Valor1 + Valor2;
+            printf("O RESULTADO FINAL DA SOMA: %0.2lf \n\n",resultado);
+            break;
+            case '-':
+            resultado = Valor1 - Valor2;
+            printf("O RESULTADO FINAL DA SUBTRACAO: %0.2lf \n\n",resultado);
+            break;
+            case '*':
+            resultado = Valor1 * Valor2;
+            printf("O RESULTADO FINAL DA MULTIPLICACAO: %0.2lf \n\n",resultado);
+            break;
+            case '/':
+            resultado = Valor1 / Valor2;
+            printf("O RESULTADO FINAL DA DIVISAO: %0.2lf \n\n",resultado);
+            break;
+    }
+    return 0;
+}
