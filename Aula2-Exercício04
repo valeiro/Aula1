@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main() {
+    double TotalGasto, resultado;
+    int opcao;
+
+    setlocale(LC_ALL, "Portuguese");
+    printf("Total Gasto R$ ");
+    scanf("%lf", &TotalGasto);
+    printf("********Escolher Opções********\n\n");
+    printf("opção 1: À vista com 10(por cento) de desconto \n");
+    printf("opção 2: Em duas vezes (preço da etiqueta) \n");
+    printf("opção 3: De 3 até 10 vezes com 3(por cento) de juros ao mês (somente para compras acima de R$ 100,00) \n");
+    printf("*********************************************************************************************************** \n\n");
+    printf("opção: ");
+    scanf("%d", &opcao);
+
+    switch (opcao) {
+        case 1:
+            resultado = TotalGasto - (TotalGasto * 0.10);
+            printf("O valor com desconto obtido pela opção 1 é de R$ %0.2lf \n\n", resultado);
+            break;
+        case 2:
+            resultado = TotalGasto / 2;
+            printf("O valor das duas parcelas será de R$ %0.2lf \n\n", resultado);
+            break;
+        case 3:
+            if (TotalGasto >= 100.00) {
+                printf("***** Parcelas de 3 à 10 com 3(por cento) de juros ao mês ***** \n\n ");
+                for (int i = 3; i <= 10; i++) {
+                    resultado = TotalGasto / i;
+                    resultado += resultado * 0.03; // Adiciona o juro mensal
+                    printf("O valor da %dª parcela: R$ %0.2lf \n", i, resultado);
+                }
+                printf("************************************************************************************* \n\n");
+            } else {
+                printf("Parcelamento permitido somente para Total Gasto acima de R$ 100,00 \n\n");
+            }
+            break;
+        default:
+            printf("Operação inválida! \n");
+            break;
+    }
+
+    return 0;
+}
