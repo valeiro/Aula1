@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+    char continuar; // Variável para armazenar a escolha do cliente
+
+    setlocale(LC_ALL, "Portuguese");
+
+    do {
+        system("cls"); // Limpa a tela (funciona no Windows)
+        int VelocidadeMaxima, VelocidadeMotorista, ExcessoVelocidade, Multa;
+
+        printf("Informe a velocidade máxima da avenida: ");
+        scanf("%d", &VelocidadeMaxima);
+
+        printf("Informe a velocidade do motorista: ");
+        scanf("%d", &VelocidadeMotorista);
+
+        ExcessoVelocidade = VelocidadeMotorista - VelocidadeMaxima;
+
+        if (ExcessoVelocidade > 0) {
+            Multa = ExcessoVelocidade * 5;
+            printf("O motorista excedeu a velocidade máxima em %d Km/h e receberá uma multa de R$ %d,00.\n", ExcessoVelocidade, Multa);
+        } else {
+            printf("O motorista estava dentro do limite de velocidade. Não há multa.\n");
+        }
+
+        printf("Deseja calcular multa novamente? (1 - Sim, 0 - Não): ");
+        scanf(" %c", &continuar);
+
+    } while (continuar == '1');
+
+    return 0;
+}
